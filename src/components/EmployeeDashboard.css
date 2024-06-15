@@ -1,0 +1,56 @@
+/* EmployeeDashboard.css */
+
+.employee-dashboard {
+    display: flex;
+ 
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #0F305E;
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+   
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #0F305E;
+    color: white;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .main-content h2 {
+    margin-bottom: 20px;
+  }
+
+  /* Styles for forms and other elements within main content can be added here */
+  

@@ -1,0 +1,120 @@
+/* ManagerDashboard.css */
+
+/* Container for the entire dashboard */
+.manager-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #0F305E;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #1E40AF;
+  }
+  
+  /* Main content area styles */
+  .main-content {
+    flex: 1; /* Main content takes up remaining space */
+    padding: 20px;
+    margin-left: 50px;
+  }
+  
+  /* Main content heading */
+  .main-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #343a40; /* Darker text color */
+  }
+  
+  /* Form styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  /* Input field and select box styles */
+  input[type="text"],
+  select {
+    flex: 1; /* Make inputs and selects flexible within their container */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da; /* Lighter border */
+    border-radius: 4px;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    background-color: #1E40AF; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }
+  
+  /* List styles */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* List item styles */
+  li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff; /* White background for list items */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 4px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .manager-dashboard {
+      flex-direction: column; /* Stack sidebar on top of main content in smaller screens */
+    }
+  
+    .sidebar {
+      flex: 0 0 100%; /* Sidebar takes full width in smaller screens */
+      border-right: none; /* No border on smaller screens */
+      border-bottom: 1px solid #e9ecef; /* Light border at the bottom */
+    }
+  
+    /* Adjust input and select widths for smaller screens */
+    input[type="text"],
+    select {
+      width: 100%;
+    }
+  }
+  

@@ -1,0 +1,33 @@
+/* src/components/LandingPage.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.landing-page h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #fffef8; /* Tomato */
+}
+
+.landing-page p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  color: #ffffff; /* White */
+}
+
+.landing-page a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 2px solid #1E40AF; /* Tomato */
+  color: #1E40AF; /* Tomato */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.landing-page a:hover {
+  background-color: #1E40AF; /* Tomato */
+  color: #ffffff; /* White */
+}
