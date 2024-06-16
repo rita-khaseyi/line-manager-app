@@ -1,6 +1,21 @@
+
+![Landing page](public/images/screen1.png)
+
+![Signup page](public/images/screen2.png)
+
+
+![Login Page](public/images/screen3.png)
+
+
+![Manager Dashboard](public/images/screen4.png)
+
 # Line Manager App
 
 A web application for company employees, managers, and administrators to manage tasks, departments, and users efficiently.
+
+
+
+
 
 ## Table of Contents
 
@@ -46,4 +61,5 @@ npm install
 npm start
 
 ```
+
 
