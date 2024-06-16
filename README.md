@@ -17,10 +17,7 @@ A web application for company employees, managers, and administrators to manage 
 - **Role Management**: Assign roles to users (Administrator, Manager, Employee).
 - **Department Management**: Managers can create and manage departments.
 - **Task Management**: Assign and manage tasks for employees.
-- **Persistent State**: Changes are saved and persist across sessions.
-- **Email Notifications**: Optional feature for sending email notifications.
-- **Summary Dashboard**: Managers have access to a summary dashboard.
-- **Task Scheduling**: Option to schedule tasks.
+
 
 ## Installation
 
