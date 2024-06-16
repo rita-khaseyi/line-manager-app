@@ -32,5 +32,13 @@ A web application for company employees, managers, and administrators to manage 
 ### Clone the Repository
 
 ```sh
-https://github.com/rita-khaseyi/line-manager-app
+git clone https://github.com/rita-khaseyi/line-manager-app
+cd line-manager-app
+
+
+
+### Install dependancies
+
+```sh
+git clone https://github.com/rita-khaseyi/line-manager-app
 cd line-manager-app
