@@ -34,11 +34,19 @@ A web application for company employees, managers, and administrators to manage 
 ```sh
 git clone https://github.com/rita-khaseyi/line-manager-app
 cd line-manager-app
+```
 
-
-
-### Install dependancies
+### Install dependencies
 
 ```sh
-git clone https://github.com/rita-khaseyi/line-manager-app
-cd line-manager-app
+npm install
+
+```
+
+### Run your server 
+
+```sh
+npm start
+
+```
+
