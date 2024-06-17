@@ -5,10 +5,12 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import './Login.css';
 
 const Login = ({ setCurrentUser }) => {
+  // State hooks for email and password inputs
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  // Handle login form submission
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -17,9 +19,11 @@ const Login = ({ setCurrentUser }) => {
     const user = users.find(user => user.email === email && user.password === password);
 
     if (user) {
+      // Store current user data in local storage
       localStorage.setItem('currentUser', JSON.stringify(user));
       setCurrentUser(user);
 
+      // Navigate to appropriate dashboard based on user role
       if (user.role === 'admin') {
         navigate('/admin-dashboard');
       } else if (user.role === 'manager') {
@@ -34,16 +38,19 @@ const Login = ({ setCurrentUser }) => {
     }
   };
 
+  // Style object for the image container
   const imageContainerStyle = {
     backgroundImage: `url(${process.env.PUBLIC_URL}/images/lands.jpg)`,
   };
 
   return (
     <div className="login-container">
+      {/* Image Container */}
       <div className="image-container" style={imageContainerStyle}>
         <div className="gradient-overlay"></div>
-  
       </div>
+
+      {/* Form Container */}
       <div className="form-container">
         <h1 className="text-primary font-bold text-2xl">Login</h1>
         <form onSubmit={handleLogin}>

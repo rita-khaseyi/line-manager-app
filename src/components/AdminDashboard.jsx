@@ -1,16 +1,17 @@
-// src/components/AdminDashboard.jsx
-
 import React, { useState, useEffect } from 'react';
-import './AdminDashboard.css'; // Import your CSS file
+import './AdminDashboard.css'; 
 
 const AdminDashboard = () => {
+  // State to store user data
   const [users, setUsers] = useState([]);
 
+  // Fetch users from local storage on component mount
   useEffect(() => {
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
     setUsers(storedUsers);
   }, []);
 
+  // Handle role change for a user
   const handleRoleChange = (id, role) => {
     const updatedUsers = users.map(user =>
       user.id === id ? { ...user, role } : user
@@ -23,7 +24,6 @@ const AdminDashboard = () => {
     <div className="admin-dashboard">
       {/* Sidebar */}
       <div className="sidebar">
-      
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="#assign-roles">Assign Roles</a></li>
@@ -32,7 +32,7 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <div className="main-content">
-      <h2><p className="mb-6 text-primary">Hello Rita 👋! Welcome </p></h2>
+        <h2><p className="mb-6 text-primary">Hello Rita 👋! Welcome </p></h2>
 
         {/* Assign Roles Section */}
         <div id="assign-roles">

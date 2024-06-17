@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ManagerDashboard.css'; // Import your CSS file
+import './ManagerDashboard.css';
 
 const ManagerDashboard = ({ currentUser }) => {
   const [departments, setDepartments] = useState([]);
@@ -23,7 +23,7 @@ const ManagerDashboard = ({ currentUser }) => {
   // Function to fetch tasks from JSON API
   const fetchTasksFromAPI = async () => {
     try {
-      const response = await axios.get(''); // Replace with your actual API endpoint
+      const response = await axios.get('');
       const fetchedTasks = response.data;
       setTasks(fetchedTasks);
       localStorage.setItem('tasks', JSON.stringify(fetchedTasks)); // Update localStorage with fetched tasks
@@ -38,7 +38,7 @@ const ManagerDashboard = ({ currentUser }) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [departments, tasks]);
 
-  // Function to add a new department (unchanged)
+  // Function to add a new department 
   const addDepartment = (name) => {
     const newDepartment = { id: Date.now(), name, employees: [] };
     const updatedDepartments = [...departments, newDepartment];
@@ -46,7 +46,7 @@ const ManagerDashboard = ({ currentUser }) => {
     localStorage.setItem('departments', JSON.stringify(updatedDepartments));
   };
 
-  // Function to assign a new task (unchanged)
+  // Function to assign a new task 
   const assignTask = (task) => {
     const newTask = { ...task, id: Date.now(), assignedTo: task.assignedTo.id };
     const updatedTasks = [...tasks, newTask];
@@ -54,21 +54,21 @@ const ManagerDashboard = ({ currentUser }) => {
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
 
-  // Function to edit an existing task (unchanged)
+  // Function to edit an existing task 
   const editTask = (taskId, updatedTask) => {
     const updatedTasks = tasks.map(task => task.id === taskId ? updatedTask : task);
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
 
-  // Function to delete a task (unchanged)
+  // Function to delete a task 
   const deleteTask = (taskId) => {
     const updatedTasks = tasks.filter(task => task.id !== taskId);
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
 
-  // Function to move an employee between departments (unchanged)
+  // Function to move an employee between departments 
   const moveEmployee = (employeeId, fromDeptId, toDeptId) => {
     const updatedDepartments = departments.map(dept => {
       if (dept.id === fromDeptId) {
@@ -83,7 +83,7 @@ const ManagerDashboard = ({ currentUser }) => {
     localStorage.setItem('departments', JSON.stringify(updatedDepartments));
   };
 
-  // Function to remove an employee from all departments (unchanged)
+  // Function to remove an employee from all departments 
   const removeEmployee = (employeeId) => {
     const updatedDepartments = departments.map(dept => ({
       ...dept,
@@ -97,9 +97,9 @@ const ManagerDashboard = ({ currentUser }) => {
     <div className="manager-dashboard">
       {/* Sidebar */}
       <div className="sidebar">
-       
+
         <ul>
-        <li><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#departments">Departments</a></li>
           <li><a href="#tasks">Tasks</a></li>
           <li><a href="#employees">Employees</a></li>
@@ -156,7 +156,8 @@ const ManagerDashboard = ({ currentUser }) => {
           }}>
             <input type="text" name="title" placeholder="Task Title" required />
             <input type="text" name="description" placeholder="Task Description" required />
-            <select name="assignedTo" required>
+            <select name="assignedTo" required>/* ManagerDashboard.css */
+
               <option value="">Assign to</option>
               {users.filter(user => user.role === 'employee').map(user => (
                 <option key={user.id} value={user.id}>{user.name}</option>

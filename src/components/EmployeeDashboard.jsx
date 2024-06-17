@@ -1,17 +1,18 @@
-// src/components/EmployeeDashboard.jsx
-
 import React, { useState, useEffect } from 'react';
-import './EmployeeDashboard.css'; // Import your CSS file
+import './EmployeeDashboard.css'; 
 
 const EmployeeDashboard = ({ currentUser }) => {
+  // State to store tasks assigned to the current user
   const [tasks, setTasks] = useState([]);
 
+  // Fetch tasks from local storage and filter for the current user on component mount or when currentUser.id changes
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const userTasks = storedTasks.filter(task => task.assignedTo === currentUser.id);
     setTasks(userTasks);
   }, [currentUser.id]);
 
+  // Update local storage whenever the tasks state changes
   useEffect(() => {
     const allTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const updatedTasks = allTasks.map(task =>
@@ -20,6 +21,7 @@ const EmployeeDashboard = ({ currentUser }) => {
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   }, [tasks]);
 
+  // Handle task status change
   const handleTaskStatusChange = (taskId, status) => {
     const updatedTasks = tasks.map(task =>
       task.id === taskId ? { ...task, status } : task
@@ -27,6 +29,7 @@ const EmployeeDashboard = ({ currentUser }) => {
     setTasks(updatedTasks);
   };
 
+  // Clear completed tasks
   const handleClearCompletedTasks = () => {
     const activeTasks = tasks.filter(task => task.status !== 'done');
     setTasks(activeTasks);
@@ -45,7 +48,7 @@ const EmployeeDashboard = ({ currentUser }) => {
 
       {/* Main Content */}
       <div className="main-content">
-      <h2><p className="mb-6 text-primary">Hello Rita 👋! Welcome </p></h2>
+        <h2><p className="mb-6 text-primary">Hello Rita 👋! Welcome </p></h2>
 
         {/* Display user's tasks */}
         <div id="tasks">
